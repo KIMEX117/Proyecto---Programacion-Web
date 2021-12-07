@@ -1,0 +1,530 @@
+/* HECHO POR: Enrique León Geraldo IDS 5 T.M. */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,900&display=swap');
+
+/*------------------------------*/
+/*  CSS PARA VARIOS ELEMENTOS   */
+/*------------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;  
+}
+
+body, a {
+    font-family: 'Roboto', sans-serif;
+    color: #686868;
+}
+
+/*--------------------------------------------------------------------------*/
+/*  MENÚ DESPLEGABLE AL REDUCIR EL ANCHO DE LA PANTALLA A MENOS DE 768PX    */
+/*--------------------------------------------------------------------------*/
+
+#menu li>a{
+  background-color: #F7F8FA;
+  color: #686868;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+}
+#menu li>a:hover{
+  color: #686868;
+  background-color: #E9E9E9;
+}
+#menu>li{
+  float: left;
+
+}
+#menu>li>ul{
+    position: absolute;
+  display: none;
+}
+#menu>li:hover>ul {
+  display:block;
+}
+
+#menu-inicio {
+    color: black!important;
+    font-size: 3vh;
+}
+
+.menu-opciones {
+    font-size: 1rem;
+}
+
+#menu {
+    display: none;
+}
+
+/*------------------------------------------------*/
+/*      MENÚ SUPERIOR DE NAVEGACIÓN DEL SITIO     */
+/*------------------------------------------------*/
+
+.navegacion {
+    background-color: #F7F8FA;
+    height: 7vh;
+    width: 100%;
+    display: flex;
+
+    align-items: center;
+    justify-items: stretch;
+    padding: 0 2vh;
+}
+
+.navegacion img {
+    width: 5vh;
+}
+
+.navegacion a {
+    font-weight: 500;
+}
+
+.logo-nombre {
+    display: flex;
+    align-items: center;
+    float: left;
+}
+
+.logo-nombre h1 {
+    color: black;
+    margin-right: 2vw;
+    padding-left: 0.3vw;
+}
+
+.secciones ul{
+    display: none;
+}
+
+.secciones li {
+    padding: 1vh 0.8vw;
+}
+
+.secciones a:hover {
+    padding: 1.5vh 0.5vw;
+    background-color: #E9E9E9;
+    border-radius: 10px;
+}
+
+.form {
+    margin-left: 2vw;
+    width: 25vw;
+}
+
+.form-control {
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    justify-content: center;
+    padding-right: 2vw;
+}
+
+.form-control input[type="text"] {
+    background-color: #FFF;
+    border: 1px solid #ced4da;
+    border-radius: 15px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    color: #686868;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    padding: 0.1vh 2vw;
+    padding-right: 0;
+    width: 100%;
+}
+
+.form-control input[type="text"]::placeholder {
+    color: #CDCDCD;
+    font-weight: 600;
+}
+
+.form-control input:focus {
+    outline: 0;
+    border:1px solid #CDCDCD;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+.btn-search{
+    border: 1px solid transparent;
+    border-radius: 15px;
+    color: black;
+    margin-left: -1px;
+    padding: .2rem .4rem;
+    text-align: center;
+    background-color: #E9E9E9;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    cursor: pointer;
+}
+
+.btn-search:hover {
+    background-color: #d4d4d4;
+}
+
+.inicio-sesion {
+    display: flex;
+    align-items: center;
+}
+
+#inicio {
+    font-size: 1em;
+}
+
+#registro {
+    font-size: 0.8em;
+}
+
+.sesion-opciones {
+    display: none;
+    padding-left: 0.5vw;
+}
+
+.inicio-sesion a:hover {
+    background-color: #E9E9E9;
+    border-radius: 10px;
+}
+
+.inicio-sesion a img:hover {
+    padding: 1vh 0;
+}
+
+.carrito {
+    display: flex;
+    align-items: center;
+    float: right;
+    justify-content: center;
+    padding-left: 0.5vw;
+}
+
+.carrito:hover {
+    background-color: #E9E9E9;
+    border-radius: 10px;
+    padding: 1vh 0;
+}
+
+#carrito-texto {
+    display: none;
+}
+
+/*-----------------------------*/
+/*      MAIN DEL SITIO WEB     */
+/*-----------------------------*/
+
+.container {
+    background-color: #FFF4E3;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    width: 100%;
+    height: 100%/*115vh*/;
+    display: block;
+}
+
+.container-form {
+    background-color: #FFE3B9;
+    border-radius: 15px;
+    margin: 0 auto;
+    padding: 15px 10px 7px;
+    width: 70vw;
+    color: black;
+}
+
+.container-form h2 {
+    font-size: 1.6em;
+    text-align: center;
+}
+
+.formulario {
+    padding: 0 3vw;
+    margin: 1.5vh 0;
+}
+
+.formulario label{
+    display: block;
+    font-weight: bolder;
+    font-size: 1.3em;
+}
+
+.formulario label::placeholder {
+    background-color: #CDCDCD;
+}
+
+.formulario input {
+    border-radius: 15px;
+    border: 1px solid #ced4da;
+    padding: 0.8vh 2vh;
+    margin-top: 0.5vh;
+    margin-bottom: 1.5vh;
+    width: 100%;
+    color: #686868;
+}
+
+.formulario input:focus {
+    outline: 0;
+    border:1px solid #CDCDCD;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+.formulario textarea {
+    font-family: 'Roboto', sans-serif;
+    /*font-size: 1.2em;*/
+    width: 100%;
+    resize: none;
+    height: 15vh;
+    padding: 1.5vh 1.5vw;
+    border-radius: 15px;
+    border: 1px solid #ced4da;
+    color: #686868;
+}
+
+.formulario textarea:focus {
+    outline: 0;
+    border:1px solid #CDCDCD;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+.formulario button {
+    background-color: #4FA0FF;
+    border-radius: 10px;
+    margin: 2vh auto;
+    padding: 1vh 2vw;
+    font-size: 1.2em;
+    color: white;
+    font-weight: bolder;
+    display: flex;
+    outline: none;
+    border: none;
+
+}
+
+.formulario button:hover {
+    background-color: #4790e6;
+}
+
+.info-general {
+    background-color: #FFE3B9;
+    border-radius: 15px;
+    margin: 3vh auto;
+    padding: 15px 10px 7px;
+    width: 70vw;
+    color: black;
+}
+
+.info-general h2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 1.6em;
+    padding-top: 0.5vh;
+    padding-bottom: 1vh;
+}
+
+.container-info {
+    padding: 0 1.5vw;
+}
+
+.sucursal {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding-right: 0.5vw;
+}
+
+.direccion, .telefono, .horario {
+    display: flex;
+    align-items: center;
+}
+
+.direccion h3, .telefono h3, .horario h3 {
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+}
+
+.google-maps {
+    padding-left: 0.5vw;
+}
+
+.google-maps img {
+    width: 100%;
+    height: 50vh;
+    border-radius: 10px;
+    border: 1px solid #CDCDCD;
+    cursor: pointer;
+}
+
+
+
+
+
+/*-------------------------------*/
+/*      FOOTER DEL SITIO WEB     */
+/*-------------------------------*/
+
+.footer {
+    background-color: #F7F8FA;
+    height: 7vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.footer h2 {
+        margin: 0 auto;
+        text-align: center;
+}
+
+/*----------------------------------------------------------*/
+/*      ELEMENTOS AL MODIFICAR AL ANCHO DE LA PANTALLA      */
+/*----------------------------------------------------------*/
+
+@media screen and (max-width: 320px) {
+    #menu {
+        display: block;
+    }
+
+    .logo-nombre h1 {
+        font-size: 1em;
+        margin-right: 0.3vw;
+    }
+
+    .form-control {
+        width: 30vw;
+    }
+
+    .footer h2 {
+        font-size: 0.5em;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    #menu {
+        display: block;
+    }
+
+    .logo-nombre h1 {
+        font-size: 1em;
+        margin-right: 0.3vw;
+    }
+
+    .form {
+        width: 60vw;
+    }
+
+    .inicio-sesion {
+        width: 10vw;
+        justify-content: center;
+    }
+
+    .carrito {
+        width: 10vw;
+    }
+
+    .container-info {
+        display: block;
+    }
+
+    .formulario input {
+        font-size: 1em;
+    }
+
+    .formulario textarea {
+        font-size: 1em;
+    }
+
+    .sucursal {
+        width: 100%;
+        padding: 0.5vh 0;
+        text-align: justify;
+    }
+
+    .sucursal img {
+        width: 6vw;
+        height: 6vw;
+    }
+
+    .google-maps {
+        width: 100%;
+        padding: 0.5vh 0;
+    }
+
+    .direccion h3, .telefono h3, .horario h3 {
+        font-size: 0.85em;
+    }
+
+    .footer h2 {
+        font-size: 0.7em;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .logo-nombre h1 {
+        font-size: 1.5em;
+    }
+
+    .secciones ul {
+        display: flex;
+        align-items: center;
+        float: left;
+    }
+
+    .sesion-opciones {
+        display: grid;
+    }
+
+    .form {
+        width: 45vw;
+    }
+
+    .inicio-sesion {
+        width: 20vw;
+        justify-content: center;
+    }
+
+    #carrito-texto {
+        display: flex;
+        align-items: center;
+        float: right;
+    }
+
+    .carrito {
+        width: 10vw;
+        justify-content: center;
+    }
+
+    .container-info {
+        display: flex;
+    }
+
+    .formulario input {
+        font-size: 1.4em;
+    }
+
+    .formulario textarea {
+        font-size: 1.2em;
+    }
+
+    .sucursal {
+        width: 100%;
+        text-align: justify;
+    }
+
+    .sucursal img {
+        width: 4vw;
+        height: 4vw;
+    }
+
+    .google-maps {
+        width: 100%;
+    }
+
+    .direccion h3, .telefono h3, .horario h3 {
+        font-size: 1.2em;
+    }
+
+    .footer h2 {
+        font-size: 0.8em;
+    }
+}

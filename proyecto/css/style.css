@@ -1,0 +1,536 @@
+/* HECHO POR: Enrique León Geraldo IDS 5 T.M. */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,900&display=swap');
+
+/*------------------------------*/
+/*  CSS PARA VARIOS ELEMENTOS   */
+/*------------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;  
+}
+
+body, a {
+    font-family: 'Roboto', sans-serif;
+    color: #686868;
+}
+
+body {
+    background-color: #FFF4E3;
+}
+
+/*--------------------------------------------------------------------------*/
+/*  MENÚ DESPLEGABLE AL REDUCIR EL ANCHO DE LA PANTALLA A MENOS DE 768PX    */
+/*--------------------------------------------------------------------------*/
+
+#menu li>a{
+  background-color: #F7F8FA;
+  color: #686868;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+}
+#menu li>a:hover{
+  color: #686868;
+  background-color: #E9E9E9;
+}
+#menu>li{
+  float: left;
+
+}
+#menu>li>ul{
+    position: absolute;
+  display: none;
+}
+#menu>li:hover>ul {
+  display:block;
+}
+
+#menu-inicio {
+    color: black!important;
+    font-size: 3vh;
+}
+
+.menu-opciones {
+    font-size: 1rem;
+}
+
+#menu {
+    display: none;
+}
+
+/*------------------------------------------------*/
+/*      MENÚ SUPERIOR DE NAVEGACIÓN DEL SITIO     */
+/*------------------------------------------------*/
+
+.navegacion {
+    background-color: #F7F8FA;
+    height: 7vh;
+    width: 100%;
+    display: flex;
+
+    align-items: center;
+    justify-items: stretch;
+    padding: 0 2vh;
+}
+
+.navegacion img {
+    width: 5vh;
+}
+
+.navegacion a {
+    font-weight: 500;
+}
+
+.logo-nombre {
+    display: flex;
+    align-items: center;
+    float: left;
+}
+
+.logo-nombre h1 {
+    color: black;
+    margin-right: 2vw;
+    padding-left: 0.3vw;
+}
+
+.secciones ul{
+    display: none;
+}
+
+.secciones li {
+    padding: 1vh 0.8vw;
+}
+
+.secciones a:hover {
+    padding: 1.5vh 0.5vw;
+    background-color: #E9E9E9;
+    border-radius: 10px;
+}
+
+.form {
+    margin-left: 2vw;
+    width: 25vw;
+}
+
+.form-control {
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    justify-content: center;
+    padding-right: 2vw;
+}
+
+.form-control input[type="text"] {
+    background-color: #FFF;
+    border: 1px solid #ced4da;
+    border-radius: 15px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    color: #686868;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    padding: 0.1vh 2vw;
+    padding-right: 0;
+    width: 100%;
+}
+
+.form-control input[type="text"]::placeholder {
+    color: #CDCDCD;
+    font-weight: 600;
+}
+
+.form-control input:focus {
+    outline: 0;
+    border:1px solid #CDCDCD;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+.btn-search{
+    border: 1px solid transparent;
+    border-radius: 15px;
+    color: black;
+    margin-left: -1px;
+    padding: .2rem .4rem;
+    text-align: center;
+    background-color: #E9E9E9;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    cursor: pointer;
+}
+
+.btn-search:hover {
+    background-color: #d4d4d4;
+}
+
+.inicio-sesion {
+    display: flex;
+    align-items: center;
+}
+
+#inicio {
+    font-size: 1em;
+}
+
+#registro {
+    font-size: 0.8em;
+}
+
+.sesion-opciones {
+    display: none;
+    padding-left: 0.5vw;
+}
+
+.inicio-sesion a:hover {
+    background-color: #E9E9E9;
+    border-radius: 10px;
+}
+
+.inicio-sesion a img:hover {
+    padding: 1vh 0;
+}
+
+.carrito {
+    display: flex;
+    align-items: center;
+    float: right;
+    justify-content: center;
+    padding-left: 0.5vw;
+}
+
+.carrito:hover {
+    background-color: #E9E9E9;
+    border-radius: 10px;
+    padding: 1vh 0;
+}
+
+#carrito-texto {
+    display: none;
+}
+
+/*
+.selected {
+    border-bottom: 2px solid #686868;
+}
+*/
+
+/*-----------------------------*/
+/*      MAIN DEL SITIO WEB     */
+/*-----------------------------*/
+
+.container {
+    background-color: #FFF4E3;
+    width: 100%;
+    height: 100%;
+}
+
+.banners {
+    width: 62.5vw;
+    padding-top: 2vh;
+    margin: 0 auto;
+}
+
+.banners img {
+    width: 100%;
+    display: block;
+    border-radius: 15px;
+    margin-top: 1.5vh;
+}
+
+.banners:hover {
+    cursor: pointer;
+}
+
+.proximo-izq {
+    transform: rotate(180deg);
+}
+
+#conjuntos {
+    background-color: #FFF4E3;
+}
+
+.elementos {
+    background-color: #FFF4E3;
+}
+
+.elementos button {
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.elementos button:hover {
+    background-color: #E9E9E9;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-proximo img {
+    align-content: center;
+    justify-content: center;
+}
+
+.productos {
+    background-color: #FFF4E3;
+    width: 62.5vw;
+    padding-top: 1vh;
+    margin: 0 auto;
+    display: flex;
+}
+
+.ofertas {
+    width: 50%;
+    display: block;
+    float: left;
+}
+
+.ofertas h2 {
+    font-size: 1.5rem;
+    color: black;
+    padding-left: 3vw ;
+}
+
+.elementos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-grid {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.grid {
+    padding: 1vh 0.3vw;
+    text-align: left;
+    font-size: 0.6em;
+}
+
+.grid:hover {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.grid h3 {
+    color: black;
+    font-size: 1rem;
+}
+
+.grid h4 {
+    font-size: 0.75rem;
+    text-decoration:line-through;
+}
+
+#conjuntos {
+    padding-top: 0.7vh;
+}
+
+.container-grid span {
+    font-size: 0.75rem;
+    width: 100%;
+}
+
+/*-------------------------------*/
+/*      FOOTER DEL SITIO WEB     */
+/*-------------------------------*/
+
+.footer {
+    background-color: #F7F8FA;
+    height: 7vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.footer h2 {
+        margin: 0 auto;
+        text-align: center;
+}
+
+/*----------------------------------------------------------*/
+/*      ELEMENTOS AL MODIFICAR AL ANCHO DE LA PANTALLA      */
+/*----------------------------------------------------------*/
+
+@media screen and (max-width: 320px) {
+    #menu {
+        display: block;
+    }
+
+    .logo-nombre h1 {
+        font-size: 1em;
+        margin-right: 0.3vw;
+    }
+
+    .form-control {
+        width: 30vw;
+    }
+
+    .container {
+        height: 150vh;
+    }
+
+    .banners {
+        width: 90vw;
+    }
+
+    .productos {
+        width: 90vw;
+        display: block;
+        background-color: #FFF4E3;
+    }
+
+    .ofertas {
+        width: 100%;
+    }
+
+    .grid img {
+        width: 20vw;
+        height: 15vh;
+        border-radius: 10px;
+    }
+
+    .btn-proximo img {
+        width: 5vw;
+    }
+
+    .footer h2 {
+        font-size: 0.5em;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    #menu {
+        display: block;
+    }
+
+    .logo-nombre h1 {
+        font-size: 1em;
+        margin-right: 0.3vw;
+    }
+
+    .form {
+        width: 60vw;
+    }
+
+    .inicio-sesion {
+        width: 10vw;
+        justify-content: center;
+    }
+
+    .carrito {
+        width: 10vw;
+    }
+
+    .container {
+        height: 120vh;
+    }
+
+    .banners {
+        width: 90vw;
+    }
+
+    .productos {
+        width: 90vw;
+        display: block;
+    }
+
+    .ofertas {
+        width: 100%;
+    }
+
+    .grid img {
+        width: 20vw;
+        height: 15vh;
+        border-radius: 10px;
+    }
+
+    .btn-proximo img {
+        width: 5vw;
+    }
+
+    .footer h2 {
+        font-size: 0.7em;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .logo-nombre h1 {
+        font-size: 1.5em;
+    }
+
+    .secciones ul {
+        display: flex;
+        align-items: center;
+        float: left;
+    }
+
+    .sesion-opciones {
+        display: grid;
+    }
+
+    .form {
+        width: 45vw;
+    }
+
+    .inicio-sesion {
+        width: 20vw;
+        justify-content: center;
+    }
+
+    #carrito-texto {
+        display: flex;
+        align-items: center;
+        float: right;
+    }
+
+    .carrito {
+        width: 10vw;
+        justify-content: center;
+    }
+
+    .banners {
+        width: 62.5vw;
+        padding-top: 2vh;
+        margin: 0 auto;
+    }
+
+    .productos {
+        width: 62.5vw;
+        padding-top: 1vh;
+        margin: 0 auto;
+        display: flex;
+    }
+
+    .ofertas {
+        width: 100%;
+    }
+
+    .grid img {
+        width: 6vw;
+        height: 15vh;
+        border-radius: 10px;
+    }
+
+    .btn-proximo img {
+        width: 2vw;
+    }
+
+    #ofertas, #conjuntos {
+        padding-bottom: 3vh;
+    }
+
+    .footer h2 {
+        font-size: 0.8em;
+    }
+}
+
+
