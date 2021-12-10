@@ -1,4 +1,4 @@
-# Proyecto---Programacion-Web
+# Proyecto - Programacion Web
 Hecho por: Enrique León Geraldo IDS 5 T.M.
 
-Debido al tiempo de entrega que se desconocía si se iba a extender la fecha límite, el proyecto se dejó en este grado de avance algo temprano. Sin embargo, si la fecha es extendida, el repositorio sera actualizado con algun adelanto. 
+NOTA: Lo que se visualiza de forma directa en el repositorio en el navegador, es lo mismo que el archivo comprimido .RAR, este incluye el código del sitio web (PHP, CSS, imgs, etc.) y además el SQL importado de XAMPP. En caso de que el sql de XAMPP no sea el que se ocupa para la base de datos, tambien se anexa el script de workbench.
