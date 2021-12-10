@@ -111,6 +111,8 @@
 								default:
 									break;
 							}
+						} else if(isset($_GET['success'])) {
+							echo '<div class="formulario"><p> - La cuenta ha sido creada exitosamente. -</p></div>';
 						}
 					?>
 					<div class="formulario">

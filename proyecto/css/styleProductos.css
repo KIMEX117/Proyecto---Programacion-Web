@@ -16,7 +16,6 @@
 
 body, a {
     font-family: 'Roboto', sans-serif;
-    color: #686868;
 }
 
 /*--------------------------------------------------------------------------*/
@@ -80,6 +79,7 @@ body, a {
 
 .navegacion a {
     font-weight: 500;
+    color: #686868;
 }
 
 .logo-nombre {
@@ -240,9 +240,9 @@ body, a {
     margin: 1vh 0;
 }
 
-.grid button {
+.grid button{
     background-color: #4FA0FF;
-    color: white;
+    color: white!important;
     border-radius: 5px;
     outline: none;
     border: none;
@@ -251,9 +251,13 @@ body, a {
     font-size: 1.3rem;
 }
 
-.grid button:hover {
+.grid button:hover{
     background-color: #4790e6;
     cursor: pointer;
+}
+
+.container-grid a {
+    color: white;
 }
 
 /*-------------------------------*/
@@ -271,6 +275,7 @@ body, a {
 .footer h2 {
         margin: 0 auto;
         text-align: center;
+        color: #686868;
 }
 
 /*----------------------------------------------------------*/

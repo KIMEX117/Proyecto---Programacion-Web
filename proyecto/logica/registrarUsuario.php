@@ -1,6 +1,4 @@
 <?php
-
-
 	session_start(); 
 	include("baseDatos.php");
 
@@ -20,8 +18,7 @@
 					if($password===$repassword) {
 						$query = "INSERT INTO usuarios (Nombre, PrimerApellido, SegundoApellido, Correo, Contraseña) VALUES ('$nombre', '$apellidoP', '$apellidoM', '$correo', sha1('$password'))"; 
 						$resultado = mysqli_query($conexion,$query);
-						$_SESSION["correo"] = $correo;
-						header("location: ../index.php");
+						header('Location: ../registro.php?success=true');
 					}else {
 						header('Location: ../registro.php?error=5'); //CONTRASEÑAS DIFERENTES
 					}
@@ -37,64 +34,4 @@
 	}else {
 		header('Location: ../registro.php?error=1'); //CAMPOS VACIOS
 	}
-
-
-	/*if(!empty($_POST['correo']) && !empty($_POST['password'])){
-		$correo=$_POST['correo'];
-		$sql="SELECT * FROM usuarios WHERE Correo='$correo'";
-		$result=mysqli_query($conexion,$sql);
-		if ($result) {
-			$row=mysqli_fetch_array($result);
-			$count=mysqli_num_rows($result);	
-			if ($count!=0) {
-				$password=sha1($_POST['password']);
-				if ($row['Contraseña']!==$password) {
-					header('Location: iniciarSesion.php?error=3');
-				}else{
-					session_start();
-					$_SESSION['correo']=$row['Correo'];
-					header('Location: index.php');
-				}
-			}else{
-				header('Location: iniciarSesion.php?error=2');
-			}
-		}else{
-			header('Location: iniciarSesion.php?error=1');
-		}
-	}else {
-		header('Location: iniciarSesion.php?error=4');
-	}*/
-	
-
-
-
-
-
-
-
-	/*session_start();
-	include("baseDatos.php");
-
-	if($_SERVER['REQUEST_METHOD'] === 'POST') {
-		$nombre = $_POST['nombre'];
-		$apellidoP = $_POST['apellidoP'];
-		$apellidoM = $_POST['apellidoM'];
-		$correo = $_POST['correo'];
-		$password = $_POST['password'];
-		$repassword = $_POST['repassword'];
-		
-	}
-
-	if(sha1($password)===sha1($repassword)){
-
-		$query = "INSERT INTO usuarios (Nombre, PrimerApellido, SegundoApellido, Correo, Contraseña) VALUES ('$nombre', '$apellidoP', '$apellidoM', '$correo', sha1('$password'))"; 
-
-		$resultado = mysqli_query($conexion,$query);
-
-		$_SESSION["correo"] = $correo;
-		header("location:index.php");
-		
-	}else {
-		header("location:registro.php");
-	}*/
 ?>

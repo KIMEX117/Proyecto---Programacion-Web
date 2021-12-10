@@ -1,6 +1,9 @@
 <!-- HECHO POR: Enrique León Geraldo IDS 5 T.M. -->
 <?php
 	session_start(); 
+	if(!isset($_SESSION['idUser'])){
+    	header("location: iniciarSesion.php");
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -61,79 +64,53 @@
 			</div>
 		</nav>
 	</header>
-	<main class="container">
+	<div class="div-Detalle">
+		<div id="contDetalle" class="div-Detalle">
+			<button id="btnDetalle"><a href="detalleCompras.php">Detalle de compras</a></button>
+		</div>
+		
+	</div>
+	<?php include_once('logica/cargarCarrito.php');?>
+	<main class="<?php if(empty($productosCarrito)||($count<=1)){ echo "container-vacio"; }else if($count>1){ echo "container";} ?>">
 		<div class="container-carrito">
 			<h1>Carrito</h1>
 			<h2>Precio</h2>
-			<div class="producto">
-				<div class="img-producto">
-					<img src="img/Producto10.jpg">
-				</div>
-				<div class="datos">
-					<h3 id="nombre">Hoodie Casual</h3>
-					<h4 id="talla">Talla: M</h4>
-					<h4 id="categoria">Categoría: Hoodie</h4>
-					<h4 id="disponibilidad">Disponible</h4>
-					<div class="cantidad">
-						<label for="cantidad">Cantidad:</label>
-						<select id="cantidad">
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							<option value="6">6</option>
-							<option value="7">7</option>
-							<option value="8">8</option>
-							<option value="9">9</option>
-						</select>
+			<?php 
+				if(empty($productosCarrito)){
+					echo "<span class='producto-vacio'>No se han añadido productos todavía.</span>";
+				}else {
+					foreach ($productosCarrito as $producto) { ?>
+					<div class="producto">
+						<div class="img-producto">
+							<?php $srcImg = "img/".$producto['img']; ?>
+							<img src="<?php echo $srcImg; ?>">
+						</div>
+						<div class="datos">
+							<h3 id="nombre"><?php echo $producto['Nombre'] ?></h3>
+							<h4 id="talla"><?php echo "Talla: ".$producto['Talla'] ?></h4>
+							<h4 id="categoria"><?php echo "Categoría: ".$producto['Categoria'] ?></h4>
+							<h4 id="disponibilidad">Disponible</h4>
+							<div class="cantidad">
+								<h4 id="Promoción">Promo: Buenfin2021</h4>
+							</div>
+							<button><a id="btnEliminar" href="logica/eliminarCarrito.php?action=remove&id=<?php echo $producto["id"]; ?>">Eliminar</a></button>
+						</div>
+						<div class="precio">
+							<h3 id="precio"><?php echo "$".$producto['Precio'].".00" ?></h3>
+						</div>
 					</div>
-					<button>Eliminar</button>
-				</div>
-				<div class="precio">
-					<h3 id="precio">$474.00 MXN</h3>
-				</div>
-			</div>
-			<div class="producto">
-				<div class="img-producto">
-					<img src="img/Producto5.jpg">
-				</div>
-				<div class="datos">
-					<h3 id="nombre">Conjunto Casual</h3>
-					<h4 id="talla">Talla: M</h4>
-					<h4 id="categoria">Categoría: Conjunto</h4>
-					<h4 id="disponibilidad">Disponible</h4>
-					<div class="cantidad">
-						<label for="cantidad">Cantidad:</label>
-						<select id="cantidad">
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							<option value="6">6</option>
-							<option value="7">7</option>
-							<option value="8">8</option>
-							<option value="9">9</option>
-						</select>
-					</div>
-					<button>Eliminar</button>
-				</div>
-				<div class="precio">
-					<h3 id="precio">$1299.00 MXN</h3>
-				</div>
-			</div>
+			<?php }} ?>
 			<div class="resumen">
 				<div class="subtotal">
-					<h3 class="regular">Subtotal (2 productos):</h3>
-					<h3 class="bold">$1773.00 MXN</h3>
+					<h3 class="regular"><?php if(!empty($count)){ echo "Subtotal (".$count." productos):"; }else { echo "Subtotal (0 productos):"; }?></h3>
+					<h3 class="bold"><?php if(!empty($total)) { echo "$".$total[0].".00 MXN"; }else { echo "$0.00 MXN"; }?></h3>
 				</div>
 				<div class="envio">
 					<h3 class="regular">Costo de entrega:</h3>
-					<h3 class="bold">Sin costo</h3>
+					<h3 class="bold"><?php if(!empty($count)){ echo "Sin costo"; }else { echo "Por definir"; }?></h3>
 				</div>
 				<div class="pagar">
-					<button>Proceder al pago</button>
+					<button><a id="btnPagar" href="logica/pagarCarrito.php?action=pay">Proceder al pago</a></button>
 				</div>
 			</div>
 		</div>

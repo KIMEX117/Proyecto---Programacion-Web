@@ -4,7 +4,7 @@
     $usuario = "root";
     $password = "";
     $db = "proyecto";
-    $conexion = new mysqli($servidor, $usuario, $password, $db);
+    $conexion = mysqli_connect($servidor, $usuario, $password, $db);
 
     if($conexion->connect_error){
         die("Conexión fallida: " . $conexion->connect_error);

@@ -1,4 +1,3 @@
-<!-- HECHO POR: Enrique León Geraldo IDS 5 T.M. -->
 <?php
 	session_start(); 
 ?>
@@ -7,9 +6,9 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>BajaShop - Productos</title>
+	<title>BajaShop - Inicio</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" integrity="sha512-BnbUDfEUfV0Slx6TunuB042k9tuKe3xrD6q4mg5Ed72LTgzDIcLPxg6yI2gcMFRyomt+yJJxE+zJwNmxki6/RA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="CSS/styleProductos.css">
+	<link rel="stylesheet" href="CSS/styleDetalle.css">
 </head>
 <body>
 	<header>
@@ -61,18 +60,42 @@
 			</div>
 		</nav>
 	</header>
-	<main class="container">
-		<div class="container-grid">
-			<?php include_once('logica/cargarProductos.php'); foreach ($productos as $producto) { ?>
-				<div class="grid">
-					<?php $srcImg = "img/".$producto['img']; ?>
-					<img src="<?php echo $srcImg; ?>">
-					<h2 name="<?php $h2Item?>"><?php echo $producto['Nombre'] ?></h2>
-					<h3 name="<?php $h3Item?>"><?php echo "Talla: ".$producto['Talla'] ?></h3>
-					<h3 name="<?php $h3Item?>"><?php echo "$".$producto['Precio'].".00" ?></h3>
-					<button><a id="btnAgregar" href="<?php if(isset($_SESSION['idUser'])) { echo "logica/objetosCarrito.php?action=addToCart&id=".$producto['id']; } else if(!isset($_SESSION['idUser'])) { echo "iniciarSesion.php"; } ?>">Agregar al carrito</a></button>
-				</div>
-			<?php } ?>
+
+	<?php include_once('logica/cargarDetalle.php'); ?>
+	<main class="<?php if(empty($compras)||($count<=10)){ echo "container-vacio"; }else if($count>10){ echo "container";} ?>">
+		<div class="container-historial">
+			<h1>Detalle de compras</h1>
+			<table class="table">
+                <thead>
+                    <tr>
+                        <th>Foto</th>
+                        <th>Nombre</th>
+                        <th>Talla</th>
+                        <th>Categoría</th>
+                        <th>Precio</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                
+                	<?php if(!empty($compras)){ foreach ($compras as $compra) { ?>
+                        <tr>
+                        	<?php $srcImg = "img/".$compra['img']; ?>
+                            <td><img src="<?php echo $srcImg; ?>"></td>
+                            <td><?php echo $compra['Nombre'] ?></td>
+                            <td><?php echo $compra['Talla'] ?></td>
+                            <td><?php echo $compra['Categoria'] ?></td>
+                            <td><?php echo "$".$compra['Precio'].".00" ?></td>
+                            <td><?php echo $compra['Fecha'] ?></td>
+                        </tr>
+                    <?php }} ?>
+                </tbody>
+            </table>
+            	<?php 
+				if(empty($compras)){
+					echo "<tr><span class = 'spanVacio'>No se han añadido productos todavía.</span></tr>";
+				}?>
 		</div>
 	</main>
 	<footer class="footer">
@@ -80,3 +103,4 @@
 	</footer>
 </body>
 </html>
+
